@@ -5,7 +5,8 @@ def appStarted(app):
     app.rows = 10
     app.cols = 10
     app.margin = 10
-    
+    fillColors(app)
+
 def getCellBounds(app, row, col):
     # aka 'modelToView'
     # returns (x0, y0, x1, y1) corners/bounding box of given cell in grid
@@ -17,17 +18,23 @@ def getCellBounds(app, row, col):
     y1 = app.margin + gridHeight * (row+1) / app.rows
     return (x0, y0, x1, y1)
 
+def fillColors(app):
+    app.colors = []
+    for _ in range(app.rows):
+        c = []
+        for _ in range(app.cols):
+            c.append(random.choice(['red', 'blue', 'green', 'yellow']))
+        app.colors.append(c)
 
 def drawBoard(app, canvas):
     for row in range(app.rows):
         for col in range(app.cols):
-            fill = random.choice(['red', 'blue', 'green', 'yellow'])
             (x0, y0, x1, y1) = getCellBounds(app, row, col)
-            canvas.create_rectangle(x0, y0, x1, y1, fill=fill ,outline="Black")
+            canvas.create_rectangle(x0, y0, x1, y1, fill=app.colors[row][col] ,outline="black")
+
 
 def redrawAll(app, canvas):
-    canvas.create_rectangle(0, 0, app.width, app.height, fill="black")
+    # canvas.create_rectangle(0, 0, app.width, app.height, fill="black")
     drawBoard(app, canvas)
     
-
 runApp(width=400, height=400)
