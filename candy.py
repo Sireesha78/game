@@ -4,7 +4,7 @@ import random
 def appStarted(app):
     app.rows = 10
     app.cols = 10
-    app.margin = 5
+    app.margin = 10
     
 def getCellBounds(app, row, col):
     # aka 'modelToView'
@@ -20,18 +20,13 @@ def getCellBounds(app, row, col):
 def drawBoard(app, canvas):
     for row in range(app.rows):
         for col in range(app.cols):
-            if(row<app.rows-2):
-                (x0, y0, x1, y1) = getCellBounds(app, row, col)
-                canvas.create_rectangle(x0, y0, x1, y1, fill='white',outline="Black")
-            else:
-                (x0, y0, x1, y1) = getCellBounds(app, row, col)
-                canvas.create_rectangle(x0, y0, x1, y1, fill='white',outline="Black")
+            fill = random.choice(['red', 'blue', 'green', 'yellow'])
+            (x0, y0, x1, y1) = getCellBounds(app, row, col)
+            canvas.create_rectangle(x0, y0, x1, y1, fill= fill ,outline="Black")
             
-
-
-
 def redrawAll(app, canvas):
+    canvas.create_rectangle(0, 0, app.width, app.height, fill="black")
     drawBoard(app, canvas)
     
 
-runApp(width=400, height=400)
+runApp(width=500, height=500)
