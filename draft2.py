@@ -58,13 +58,6 @@ def drawBoard(app, canvas):
         for col in range(app.cols):
             (x0, y0, x1, y1) = getCellBounds(app, row, col)
             canvas.create_rectangle(x0, y0, x1, y1, fill=app.colors[row][col] ,outline="black")
-# def mousePressed(app, event):
-#     (row, col) = getCell(app, event.x, event.y)
-#     # select this (row, col) unless it is selected
-#     if (app.selection == (row, col)):
-#         app.selection = (-1, -1)
-#     else:
-#         app.selection = (row, col)
 # # def cell_pos():
 # #     return int(cursor.app.rows // 10)-1 , int(cursor.app.cols // 10)
 # def mousePressed(app, event):
@@ -96,13 +89,21 @@ def drop_cell(row,col,canvas):
     for i in range(col,0,-1):
         canvas[i][row]= canvas[i-1][row]
     canvas[0][row]=None
-
 def new_cell(app, canvas):
     New_prob=0
     #for col in range(len(canvas[0])):
     for row in range(app.rows):
         if canvas[0][row] is None and random.random()<New_prob:
             canvas[0][row]=random.randint(1,8)
+
+def mousePressed(app, event):
+    (row, col) = getCell(app, event.x, event.y)
+    # select this (row, col) unless it is selected
+    if (app.selection == (row, col)):
+        app.selection = (-1, -1)
+    else:
+        app.selection = (row, col)
+
 
 
 

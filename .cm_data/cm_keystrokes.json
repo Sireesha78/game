@@ -14199,6 +14199,139 @@
             "keyStrokeTimeStamp": "Thu Nov 05 2020 01:59:33",
             "keyStrokeInfo": "0",
             "position": "6,17"
+        },
+        {
+            "operation": "PASTE",
+            "lines": 28,
+            "keyStrokeTimeStamp": "Thu Nov 05 2020 18:28:44",
+            "keyStrokeInfo": "def check_gaps(app, canvas):\r\n    for col in range(canvas-1,-1,-1):\r\n        for row in range(canvas):\r\n            if canvas[col][row] is None:\r\n                drop_cell(row,col,canvas)\r\n\r\ndef drop_cell(row,col,canvas):\r\n    for i in range(col,0,-1):\r\n        canvas[i][row]= canvas[i-1][row]\r\n    canvas[0][row]=None\r\n\r\ndef new_cell(app, canvas):\r\n    New_prob=0\r\n    #for col in range(len(canvas[0])):\r\n    for row in range(app.rows):\r\n        if canvas[0][row] is None and random.random()<New_prob:\r\n            canvas[0][row]=random.randint(1,8)\r\n\r\n\r\n\r\ndef redrawAll(app, canvas):\r\n    \r\n    # draw grid of cells\r\n    for row in range(app.rows):\r\n        for col in range(app.cols):\r\n            (x0, y0, x1, y1) = getCellBounds(app, row, col)\r\n            fill = \"black\" if (app.selection == (row, col)) else \"white\"\r\n            canvas.create_rectangle(x0, y0, x1, y1, fill=fill)",
+            "position": "34,1"
+        },
+        {
+            "operation": "DELETE",
+            "lines": 0,
+            "keyStrokeTimeStamp": "Thu Nov 05 2020 18:28:53",
+            "keyStrokeInfo": "",
+            "position": "65,5"
+        },
+        {
+            "operation": "PASTE",
+            "lines": 1,
+            "keyStrokeTimeStamp": "Thu Nov 05 2020 18:28:54",
+            "keyStrokeInfo": "\r\n            ",
+            "position": "61,63"
+        },
+        {
+            "operation": "DELETE",
+            "lines": 0,
+            "keyStrokeTimeStamp": "Thu Nov 05 2020 18:28:55",
+            "keyStrokeInfo": "",
+            "position": "62,9"
+        },
+        {
+            "operation": "DELETE",
+            "lines": 0,
+            "keyStrokeTimeStamp": "Thu Nov 05 2020 18:28:55",
+            "keyStrokeInfo": "",
+            "position": "62,5"
+        },
+        {
+            "operation": "PASTE",
+            "lines": 1,
+            "keyStrokeTimeStamp": "Thu Nov 05 2020 18:28:57",
+            "keyStrokeInfo": "drawBoard(app, canvas)",
+            "position": "62,5"
+        },
+        {
+            "operation": "TYPED",
+            "lines": 0,
+            "keyStrokeTimeStamp": "Thu Nov 05 2020 18:29:04",
+            "keyStrokeInfo": "# ",
+            "position": "64,1"
+        },
+        {
+            "operation": "TYPED",
+            "lines": 0,
+            "keyStrokeTimeStamp": "Thu Nov 05 2020 18:29:28",
+            "keyStrokeInfo": "\r\n    ",
+            "position": "8,20"
+        },
+        {
+            "operation": "PASTE",
+            "lines": 19,
+            "keyStrokeTimeStamp": "Thu Nov 05 2020 18:29:29",
+            "keyStrokeInfo": "app.selection = (-1, -1)\r\n\r\ndef getCell(app, x, y):\r\n    # aka \"viewToModel\"\r\n    # return (row, col) in which (x, y) occurred or (-1, -1) if outside grid.\r\n    if (not pointInGrid(app, x, y)):\r\n        return (-1, -1)\r\n    gridWidth  = app.width - 2*app.margin\r\n    gridHeight = app.height - 2*app.margin\r\n    cellWidth  = gridWidth / app.cols\r\n    cellHeight = gridHeight / app.rows\r\n\r\n    # Note: we have to use int() here and not just // because\r\n    # row and col cannot be floats and if any of x, y, app.margin,\r\n    # cellWidth or cellHeight are floats, // would still produce floats.\r\n    row = int((y - app.margin) / cellHeight)\r\n    col = int((x - app.margin) / cellWidth)\r\n\r\n    return (row, col)   ",
+            "position": "9,5"
+        },
+        {
+            "operation": "PASTE",
+            "lines": 4,
+            "keyStrokeTimeStamp": "Thu Nov 05 2020 18:30:18",
+            "keyStrokeInfo": "def pointInGrid(app, x, y):\r\n    # return True if (x, y) is inside the grid defined by app.\r\n    return ((app.margin <= x <= app.width-app.margin) and\r\n            (app.margin <= y <= app.height-app.margin))\r\n",
+            "position": "39,1"
+        },
+        {
+            "operation": "DELETE",
+            "lines": 4,
+            "keyStrokeTimeStamp": "Thu Nov 05 2020 18:30:51",
+            "keyStrokeInfo": "",
+            "position": "39,1"
+        },
+        {
+            "operation": "DELETE",
+            "lines": 18,
+            "keyStrokeTimeStamp": "Thu Nov 05 2020 18:30:51",
+            "keyStrokeInfo": "",
+            "position": "9,5"
+        },
+        {
+            "operation": "DELETE",
+            "lines": 1,
+            "keyStrokeTimeStamp": "Thu Nov 05 2020 18:30:51",
+            "keyStrokeInfo": "",
+            "position": "8,20"
+        },
+        {
+            "operation": "DELETE",
+            "lines": 0,
+            "keyStrokeTimeStamp": "Thu Nov 05 2020 18:30:52",
+            "keyStrokeInfo": "",
+            "position": "64,1"
+        },
+        {
+            "operation": "DELETE",
+            "lines": 0,
+            "keyStrokeTimeStamp": "Thu Nov 05 2020 18:30:52",
+            "keyStrokeInfo": "",
+            "position": "62,5"
+        },
+        {
+            "operation": "TYPED",
+            "lines": 0,
+            "keyStrokeTimeStamp": "Thu Nov 05 2020 18:30:52",
+            "keyStrokeInfo": "        ",
+            "position": "62,5"
+        },
+        {
+            "operation": "DELETE",
+            "lines": 1,
+            "keyStrokeTimeStamp": "Thu Nov 05 2020 18:30:52",
+            "keyStrokeInfo": "",
+            "position": "61,63"
+        },
+        {
+            "operation": "PASTE",
+            "lines": 1,
+            "keyStrokeTimeStamp": "Thu Nov 05 2020 18:30:53",
+            "keyStrokeInfo": "drawBoard(app, canvas)",
+            "position": "65,5"
+        },
+        {
+            "operation": "DELETE",
+            "lines": 27,
+            "keyStrokeTimeStamp": "Thu Nov 05 2020 18:30:53",
+            "keyStrokeInfo": "",
+            "position": "34,1"
         }
     ],
     "m.py": [
@@ -24624,6 +24757,76 @@
             "keyStrokeTimeStamp": "Thu Nov 05 2020 18:26:02",
             "keyStrokeInfo": "# ",
             "position": "67,1"
+        },
+        {
+            "operation": "PASTE",
+            "lines": 1,
+            "keyStrokeTimeStamp": "Thu Nov 05 2020 18:30:28",
+            "keyStrokeInfo": "# ",
+            "position": "122,1"
+        },
+        {
+            "operation": "DELETE",
+            "lines": 0,
+            "keyStrokeTimeStamp": "Thu Nov 05 2020 18:31:08",
+            "keyStrokeInfo": "",
+            "position": "1,1"
+        },
+        {
+            "operation": "DELETE",
+            "lines": 0,
+            "keyStrokeTimeStamp": "Thu Nov 05 2020 18:31:08",
+            "keyStrokeInfo": "",
+            "position": "61,1"
+        },
+        {
+            "operation": "DELETE",
+            "lines": 1,
+            "keyStrokeTimeStamp": "Thu Nov 05 2020 18:31:09",
+            "keyStrokeInfo": "",
+            "position": "99,1"
+        },
+        {
+            "operation": "DELETE",
+            "lines": 6,
+            "keyStrokeTimeStamp": "Thu Nov 05 2020 18:31:09",
+            "keyStrokeInfo": "",
+            "position": "61,1"
+        },
+        {
+            "operation": "DELETE",
+            "lines": 1,
+            "keyStrokeTimeStamp": "Thu Nov 05 2020 18:31:09",
+            "keyStrokeInfo": "",
+            "position": "61,1"
+        },
+        {
+            "operation": "PASTE",
+            "lines": 7,
+            "keyStrokeTimeStamp": "Thu Nov 05 2020 18:31:10",
+            "keyStrokeInfo": "def mousePressed(app, event):\r\n    (row, col) = getCell(app, event.x, event.y)\r\n    # select this (row, col) unless it is selected\r\n    if (app.selection == (row, col)):\r\n        app.selection = (-1, -1)\r\n    else:\r\n        app.selection = (row, col)",
+            "position": "99,1"
+        },
+        {
+            "operation": "TYPED",
+            "lines": 0,
+            "keyStrokeTimeStamp": "Thu Nov 05 2020 18:31:10",
+            "keyStrokeInfo": "\r\n",
+            "position": "107,1"
+        },
+        {
+            "operation": "TYPED",
+            "lines": 0,
+            "keyStrokeTimeStamp": "Thu Nov 05 2020 18:31:10",
+            "keyStrokeInfo": "\r\n",
+            "position": "108,1"
+        },
+        {
+            "operation": "TYPED",
+            "lines": 0,
+            "keyStrokeTimeStamp": "Thu Nov 05 2020 18:31:11",
+            "keyStrokeInfo": "\r\n",
+            "position": "109,1"
         }
     ]
 }
