@@ -51,6 +51,9 @@ def getCell(app, x, y):
         col = int((x - app.margin) / cellWidth)
         return (row, col)
 
+def validMatch(app, row1, col1, row2, col2):
+    pass
+
 def swapCells(app):
     r1 = app.selected[0][0]
     c1 = app.selected[0][1]
