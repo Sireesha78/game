@@ -38,7 +38,9 @@ def mousePressed(app, event):                               #this will happen on
     if len(app.selected)==2:                                    #there are 2 pairs of row and col in app.selected               
         swapCells(app)                                          #call swapCells
         app.selected = []                                       #after swapping set app.selected as empty
-
+        check_gaps(app)
+        new_cell(app)
+        
 def swapCells(app):
     r1 = app.selected[0][0]
     c1 = app.selected[0][1]
@@ -85,6 +87,28 @@ def eliminateRowMatch3(app, row, col):
             app.colors[row][col] = None
             return True
     return False
+
+def drop_cell(app,row,col):
+    for r in range(row,0,-1):
+        # for col in row:
+        # if app.colors[row][r] == app.colors[row-1][r]:
+        #         app.colors[0][r]=None
+        (app.colors[r][col], app.colors[r-1][col])=(app.colors[r-1][col], app.colors[r][col])
+
+
+def check_gaps(app):
+    for row in range(app.rows):
+        for col in range(app.cols):
+            if app.colors[row][col] == None:
+                drop_cell(app,row,col)
+            
+
+def new_cell(app):
+    color=["red","blue","green","yellow"]
+    for row in range(app.rows):
+        for col in range(app.cols):
+            if app.colors[row][col] == None:
+                app.colors[row][col] = random.choice(color)
 
 def redrawAll(app, canvas):                                 #this will be seen on output screen
     for row in range(app.rows):
