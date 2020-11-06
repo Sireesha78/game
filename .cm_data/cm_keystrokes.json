@@ -14332,6 +14332,13 @@
             "keyStrokeTimeStamp": "Thu Nov 05 2020 18:30:53",
             "keyStrokeInfo": "",
             "position": "34,1"
+        },
+        {
+            "operation": "PASTE",
+            "lines": 30,
+            "keyStrokeTimeStamp": "Fri Nov 06 2020 16:35:17",
+            "keyStrokeInfo": "    fillColors(app)\r\n\r\ndef getCellBounds(app, row, col):\r\n    # aka 'modelToView'\r\n    # returns (x0, y0, x1, y1) corners/bounding box of given cell in grid\r\n    gridWidth  = app.width - 2*app.margin\r\n    gridHeight = app.height - 2*app.margin\r\n    x0 = app.margin + gridWidth * col / app.cols\r\n    x1 = app.margin + gridWidth * (col+1) / app.cols\r\n    y0 = app.margin + gridHeight * row / app.rows\r\n    y1 = app.margin + gridHeight * (row+1) / app.rows\r\n    return (x0, y0, x1, y1)\r\n\r\ndef fillColors(app):\r\n    app.colors = []\r\n    for _ in range(app.rows):\r\n        c = []\r\n        for _ in range(app.cols):\r\n            c.append(random.choice(['red', 'blue', 'green', 'yellow']))\r\n        app.colors.append(c)\r\n\r\ndef drawBoard(app, canvas):\r\n    for row in range(app.rows):\r\n        for col in range(app.cols):\r\n            (x0, y0, x1, y1) = getCellBounds(app, row, col)\r\n            canvas.create_rectangle(x0, y0, x1, y1, fill=app.colors[row][col] ,outline=\"black\")\r\n\r\n\r\ndef redrawAll(app, canvas):\r\n    # canvas.create_rectangle(0, 0, app.width, app.height, fill=\"black\")\r\n",
+            "position": "8,1"
         }
     ],
     "m.py": [
@@ -24843,6 +24850,13 @@
             "keyStrokeTimeStamp": "Fri Nov 06 2020 09:20:55",
             "keyStrokeInfo": "9",
             "position": "97,45"
+        },
+        {
+            "operation": "PASTE",
+            "lines": 1,
+            "keyStrokeTimeStamp": "Fri Nov 06 2020 16:35:17",
+            "keyStrokeInfo": "            canvas[0][row]=random.randint(1,9)\r\n",
+            "position": "97,1"
         }
     ]
 }
