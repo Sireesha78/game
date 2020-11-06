@@ -1,5 +1,28 @@
 from cmu_112_graphics import *
 import random
+# import pygame
+import time
+import sys
+# import pygame, sys
+# from pygame.locals import *
+
+# clock = pygame.time.Clock()
+# time = 0  #In Seconds
+
+#     #GameLoop
+
+# while True:
+
+#     milli = clock.tick()  #clock.tick() returns how many milliseconds passed since the last time it was called
+
+
+#         #So it tells you how long the while loop took
+
+#     seconds = milli/1000.
+
+#     time += seconds
+
+#     print (round(time)) #So you can see that this works
 
 def appStarted(app):
     app.rows = 10                           #number of rows
@@ -8,6 +31,7 @@ def appStarted(app):
     app.colors = []                         #will contain colors of cells
     initFillGrid(app)                       #initial random coloring function
     app.selected = []                       #keeps account of selected cells
+    app.score = 0
 
 score = 0
 
@@ -17,6 +41,18 @@ def initFillGrid(app):
     for _ in range(app.rows):
         color = random.choices(colors, k=app.cols)          
         app.colors.append(color)
+    for col in range(app.cols):
+        row = 0
+        while(row<app.rows-2):
+            if app.colors[row][col] == app.colors[row+1][col] == app.colors[row+2][col]:
+                app.colors[row][col] = random.choice(colors)
+            else:
+                row += 1
+    for row in range(app.rows-1, -1, -1):
+        for col in range(app.cols):
+            if (eliminateMatch5(app, row, col) or eliminateMatch3(app, row, col)):
+                drop_cell(app, row, col)
+                new_cell(app)
     while(checkMatches(app)!=0):
         pass
     score = 0 
@@ -65,6 +101,7 @@ def swapCells(app):
             score += 2
         elif match3:
             score += 1
+
 
 def validMatch3(app, row1, col1, row2, col2):                           #check if swap is valid match 3 move
     return eliminateMatch3(app, row1, col1) or eliminateMatch3(app, row2, col2)
@@ -157,6 +194,8 @@ def checkMatches(app):
     return c
 
 def redrawAll(app, canvas):                                 #this will be seen on output screen
+    
+    print(app.score)
     for row in range(app.rows):
         for col in range(app.cols):
             (x0, y0, x1, y1) = getCellBounds(app, row, col)
