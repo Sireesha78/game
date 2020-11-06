@@ -14208,7 +14208,6 @@
             "position": "6,17"
         },
         {
-<<<<<<< HEAD
             "operation": "DELETE",
             "lines": 1,
             "keyStrokeTimeStamp": "Thu Nov 05 2020 10:27:36",
@@ -14256,7 +14255,6 @@
             "keyStrokeTimeStamp": "Thu Nov 05 2020 10:29:05",
             "keyStrokeInfo": "r",
             "position": "22,9"
-=======
             "operation": "PASTE",
             "lines": 28,
             "keyStrokeTimeStamp": "Thu Nov 05 2020 18:28:44",
@@ -14297,25 +14295,20 @@
             "keyStrokeTimeStamp": "Thu Nov 05 2020 18:28:57",
             "keyStrokeInfo": "drawBoard(app, canvas)",
             "position": "62,5"
->>>>>>> 98db99f9c40fa37fa4d950abe356c988f1ff85bf
         },
         {
             "operation": "TYPED",
             "lines": 0,
-<<<<<<< HEAD
             "keyStrokeTimeStamp": "Thu Nov 05 2020 10:29:05",
             "keyStrokeInfo": "s",
             "position": "22,10"
-=======
             "keyStrokeTimeStamp": "Thu Nov 05 2020 18:29:04",
             "keyStrokeInfo": "# ",
             "position": "64,1"
->>>>>>> 98db99f9c40fa37fa4d950abe356c988f1ff85bf
         },
         {
             "operation": "TYPED",
             "lines": 0,
-<<<<<<< HEAD
             "keyStrokeTimeStamp": "Thu Nov 05 2020 10:29:06",
             "keyStrokeInfo": " ",
             "position": "22,11"
@@ -14361,7 +14354,6 @@
             "keyStrokeTimeStamp": "Thu Nov 05 2020 10:29:21",
             "keyStrokeInfo": "",
             "position": "27,35"
-=======
             "keyStrokeTimeStamp": "Thu Nov 05 2020 18:29:28",
             "keyStrokeInfo": "\r\n    ",
             "position": "8,20"
@@ -14400,25 +14392,20 @@
             "keyStrokeTimeStamp": "Thu Nov 05 2020 18:30:51",
             "keyStrokeInfo": "",
             "position": "8,20"
->>>>>>> 98db99f9c40fa37fa4d950abe356c988f1ff85bf
         },
         {
             "operation": "DELETE",
             "lines": 0,
-<<<<<<< HEAD
             "keyStrokeTimeStamp": "Thu Nov 05 2020 10:29:21",
             "keyStrokeInfo": "",
             "position": "27,34"
-=======
             "keyStrokeTimeStamp": "Thu Nov 05 2020 18:30:52",
             "keyStrokeInfo": "",
             "position": "64,1"
->>>>>>> 98db99f9c40fa37fa4d950abe356c988f1ff85bf
         },
         {
             "operation": "DELETE",
             "lines": 0,
-<<<<<<< HEAD
             "keyStrokeTimeStamp": "Thu Nov 05 2020 10:29:21",
             "keyStrokeInfo": "",
             "position": "27,33"
@@ -14450,7 +14437,6 @@
             "keyStrokeTimeStamp": "Thu Nov 05 2020 10:29:22",
             "keyStrokeInfo": "",
             "position": "27,29"
-=======
             "keyStrokeTimeStamp": "Thu Nov 05 2020 18:30:52",
             "keyStrokeInfo": "",
             "position": "62,5"
@@ -14498,38 +14484,30 @@
             "keyStrokeTimeStamp": "Thu Nov 05 2020 10:56:21",
             "keyStrokeInfo": "from cmu_112_graphics import *\r\nimport random",
             "position": "1,1"
->>>>>>> 98db99f9c40fa37fa4d950abe356c988f1ff85bf
         },
         {
             "operation": "TYPED",
             "lines": 0,
-<<<<<<< HEAD
             "keyStrokeTimeStamp": "Thu Nov 05 2020 10:29:23",
             "keyStrokeInfo": "i",
             "position": "27,29"
-=======
             "keyStrokeTimeStamp": "Thu Nov 05 2020 10:56:23",
             "keyStrokeInfo": "\r\n",
             "position": "2,14"
->>>>>>> 98db99f9c40fa37fa4d950abe356c988f1ff85bf
         },
         {
             "operation": "TYPED",
             "lines": 0,
-<<<<<<< HEAD
             "keyStrokeTimeStamp": "Thu Nov 05 2020 10:29:23",
             "keyStrokeInfo": "m",
             "position": "27,30"
-=======
             "keyStrokeTimeStamp": "Thu Nov 05 2020 10:56:23",
             "keyStrokeInfo": "\r\n",
             "position": "3,1"
->>>>>>> 98db99f9c40fa37fa4d950abe356c988f1ff85bf
         },
         {
             "operation": "TYPED",
             "lines": 0,
-<<<<<<< HEAD
             "keyStrokeTimeStamp": "Thu Nov 05 2020 10:29:23",
             "keyStrokeInfo": "t",
             "position": "27,31"
@@ -14554,7 +14532,6 @@
             "keyStrokeTimeStamp": "Thu Nov 05 2020 10:29:25",
             "keyStrokeInfo": "",
             "position": "27,29"
-=======
             "keyStrokeTimeStamp": "Thu Nov 05 2020 10:56:31",
             "keyStrokeInfo": "d",
             "position": "4,1"
@@ -14579,111 +14556,86 @@
             "keyStrokeTimeStamp": "Thu Nov 05 2020 10:56:32",
             "keyStrokeInfo": " ",
             "position": "4,4"
->>>>>>> 98db99f9c40fa37fa4d950abe356c988f1ff85bf
         },
         {
             "operation": "TYPED",
             "lines": 0,
-<<<<<<< HEAD
             "keyStrokeTimeStamp": "Thu Nov 05 2020 10:29:25",
             "keyStrokeInfo": "r",
             "position": "27,29"
-=======
             "keyStrokeTimeStamp": "Thu Nov 05 2020 10:56:37",
             "keyStrokeInfo": "g",
             "position": "4,5"
->>>>>>> 98db99f9c40fa37fa4d950abe356c988f1ff85bf
         },
         {
             "operation": "TYPED",
             "lines": 0,
-<<<<<<< HEAD
             "keyStrokeTimeStamp": "Thu Nov 05 2020 10:29:26",
             "keyStrokeInfo": "a",
             "position": "27,30"
-=======
             "keyStrokeTimeStamp": "Thu Nov 05 2020 10:56:38",
             "keyStrokeInfo": "()",
             "position": "4,6"
->>>>>>> 98db99f9c40fa37fa4d950abe356c988f1ff85bf
         },
         {
             "operation": "TYPED",
             "lines": 0,
-<<<<<<< HEAD
             "keyStrokeTimeStamp": "Thu Nov 05 2020 10:29:26",
             "keyStrokeInfo": "randint",
             "position": "27,29"
-=======
             "keyStrokeTimeStamp": "Thu Nov 05 2020 10:56:42",
             "keyStrokeInfo": "s",
             "position": "4,7"
->>>>>>> 98db99f9c40fa37fa4d950abe356c988f1ff85bf
         },
         {
             "operation": "TYPED",
             "lines": 0,
-<<<<<<< HEAD
             "keyStrokeTimeStamp": "Thu Nov 05 2020 10:29:27",
             "keyStrokeInfo": "()",
             "position": "27,36"
-=======
             "keyStrokeTimeStamp": "Thu Nov 05 2020 10:56:42",
             "keyStrokeInfo": "e",
             "position": "4,8"
->>>>>>> 98db99f9c40fa37fa4d950abe356c988f1ff85bf
         },
         {
             "operation": "TYPED",
             "lines": 0,
-<<<<<<< HEAD
             "keyStrokeTimeStamp": "Thu Nov 05 2020 10:29:29",
             "keyStrokeInfo": ")",
             "position": "27,38"
-=======
             "keyStrokeTimeStamp": "Thu Nov 05 2020 10:56:42",
             "keyStrokeInfo": "l",
             "position": "4,9"
->>>>>>> 98db99f9c40fa37fa4d950abe356c988f1ff85bf
         },
         {
             "operation": "TYPED",
             "lines": 0,
-<<<<<<< HEAD
             "keyStrokeTimeStamp": "Thu Nov 05 2020 10:29:31",
             "keyStrokeInfo": "0",
             "position": "27,37"
-=======
             "keyStrokeTimeStamp": "Thu Nov 05 2020 10:56:42",
             "keyStrokeInfo": "f",
             "position": "4,10"
->>>>>>> 98db99f9c40fa37fa4d950abe356c988f1ff85bf
         },
         {
             "operation": "TYPED",
             "lines": 0,
-<<<<<<< HEAD
             "keyStrokeTimeStamp": "Thu Nov 05 2020 10:29:32",
             "keyStrokeInfo": ",",
             "position": "27,38"
-=======
             "keyStrokeTimeStamp": "Thu Nov 05 2020 10:56:43",
             "keyStrokeInfo": ",",
             "position": "4,11"
->>>>>>> 98db99f9c40fa37fa4d950abe356c988f1ff85bf
         },
         {
             "operation": "TYPED",
             "lines": 0,
-<<<<<<< HEAD
             "keyStrokeTimeStamp": "Thu Nov 05 2020 10:29:33",
             "keyStrokeInfo": "l",
             "position": "27,39"
-=======
             "keyStrokeTimeStamp": "Thu Nov 05 2020 10:56:44",
             "keyStrokeInfo": "b",
             "position": "4,12"
->>>>>>> 98db99f9c40fa37fa4d950abe356c988f1ff85bf
         },
         {
             "operation": "TYPED",
@@ -31615,41 +31567,32 @@
         {
             "operation": "TYPED",
             "lines": 0,
-<<<<<<< HEAD
             "keyStrokeTimeStamp": "Thu Nov 05 2020 17:12:25",
             "keyStrokeInfo": "o",
             "position": "71,27"
-=======
             "keyStrokeTimeStamp": "Thu Nov 05 2020 11:45:25",
             "keyStrokeInfo": "o",
             "position": "38,28"
->>>>>>> 98db99f9c40fa37fa4d950abe356c988f1ff85bf
         },
         {
             "operation": "TYPED",
             "lines": 0,
-<<<<<<< HEAD
             "keyStrokeTimeStamp": "Thu Nov 05 2020 17:12:26",
             "keyStrokeInfo": "w",
             "position": "71,28"
-=======
             "keyStrokeTimeStamp": "Thu Nov 05 2020 11:45:25",
             "keyStrokeInfo": "w",
             "position": "38,29"
->>>>>>> 98db99f9c40fa37fa4d950abe356c988f1ff85bf
         },
         {
             "operation": "TYPED",
             "lines": 0,
-<<<<<<< HEAD
             "keyStrokeTimeStamp": "Thu Nov 05 2020 17:12:26",
             "keyStrokeInfo": "s",
             "position": "71,29"
-=======
             "keyStrokeTimeStamp": "Thu Nov 05 2020 11:45:25",
             "keyStrokeInfo": "s",
             "position": "38,30"
->>>>>>> 98db99f9c40fa37fa4d950abe356c988f1ff85bf
         },
         {
             "operation": "TYPED",
