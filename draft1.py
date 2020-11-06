@@ -1,5 +1,22 @@
 from cmu_112_graphics import *
 import random
+from tkinter import messagebox
+# import time
+# import sys
+ 
+# stop = 10
+# second = 0
+ 
+# if stop > second:
+#     if second < 9:
+#         second = second + 1
+#         time.sleep(1)
+#         sys.stdout.write('\r> ' + '0' + str(second))
+#     else:
+#         second += 1
+#         time.sleep(1)
+#         #sys.stdout.write('\r' + '> ' + str(second)
+    
 
 def appStarted(app):
     app.rows = 10                           #number of rows
@@ -8,7 +25,7 @@ def appStarted(app):
     app.colors = []                         #will contain colors of cells
     initFillGrid(app)                       #initial random coloring function
     app.selected = []                       #keeps account of selected cells
-
+   
 def initFillGrid(app):
     colors = ['red', 'blue', 'green', 'yellow']             #list of desired colors
     for _ in range(app.rows):
@@ -49,13 +66,15 @@ def swapCells(app):
     c2 = app.selected[1][1]
     if (abs(r1-r2)==1 and c1==c2) or (r1==r2 and abs(c1-c2)==1):        #if cells are adjacent, swap their colors
         (app.colors[r1][c1], app.colors[r2][c2]) = (app.colors[r2][c2], app.colors[r1][c1])
-        if not validMatch5(app, r1, c1, r2, c2) and not validMatch3(app, r1, c1, r2, c2):       #if move is not valid, restore..
+        if not validMatch3(app, r1, c1, r2, c2) and not validMatch5(app, r1, c1, r2, c2):       #if move is not valid, restore..
             (app.colors[r1][c1], app.colors[r2][c2]) = (app.colors[r2][c2], app.colors[r1][c1]) #..original colors
 
-def validMatch3(app, row1, col1, row2, col2):                           #check if swap is valid match 3 move
+def validMatch3(app, row1, col1, row2, col2): #check if swap is valid match 3 move
+    s.append(1)
     return eliminateMatch3(app, row1, col1) or eliminateMatch3(app, row2, col2)
 
 def validMatch5(app, row1, col1, row2, col2):                           #check if swap is valid match 5 move
+    s1.append(1)
     return eliminateMatch5(app, row1, col1) or eliminateMatch5(app, row2, col2)    
 
 def eliminateMatch3(app, row, col):                                     #finds a possible match 3
@@ -136,5 +155,11 @@ def redrawAll(app, canvas):                                 #this will be seen o
                 border = 'black'
                 thick = 1
             canvas.create_rectangle(x0, y0, x1, y1, fill=app.colors[row][col], outline=border, width= thick)
-
+s=[]
+s1=[]
 runApp(width=400, height=400)
+print(len(s1),len(s))
+if(len(s)>0):
+    messagebox.showinfo('Game has ended', 'score='+str((len(s)-(len(s1)))+(2*(len(s1)))))
+else:
+    messagebox.showinfo('Game has ended', 'score='+str((len(s))+(2*(len(s1)))))
