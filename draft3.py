@@ -40,7 +40,7 @@ def mousePressed(app, event):                               #this will happen on
         app.selected = []                                       #after swapping set app.selected as empty
         check_gaps(app)
         new_cell(app)
-
+        
 def swapCells(app):
     r1 = app.selected[0][0]
     c1 = app.selected[0][1]
@@ -88,6 +88,7 @@ def eliminateRowMatch3(app, row, col):
             return True
     return False
 
+
 def drop_cell(app,row,col):
     for r in range(row,0,-1):
         # for col in row:
@@ -104,10 +105,6 @@ def check_gaps(app):
             
 
 def new_cell(app):
-    # New_prob=0.9
-    # for row in range(app.rows):
-    #     if app.colors[0][row] is None and random.random()<New_prob:
-    #         app.colors[0][row]=random.randint(1,9)
     color=["red","blue","green","yellow"]
     for row in range(app.rows):
         for col in range(app.cols):
