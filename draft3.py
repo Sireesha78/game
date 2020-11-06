@@ -88,7 +88,6 @@ def eliminateRowMatch3(app, row, col):
             return True
     return False
 
-
 def drop_cell(app,row,col):
     for r in range(row,0,-1):
         # for col in row:
