@@ -1,14 +1,14 @@
-# import random
+import random
 
-# rows = 10
-# cols = 10
+rows = 10
+cols = 10
 
-# colorGrid = []
-# colors = ['red', 'blue', 'green', 'yellow'] 
+colorGrid = []
+colors = ['red', 'blue', 'green', 'yellow'] 
 
-# for _ in range(rows):
-#     color = random.choices(colors, k=cols)
-#     colorGrid.append(color)
+for _ in range(rows):
+    color = random.choices(colors, k=cols)
+    colorGrid.append(color)
 
 # for row in range(rows):
 #     col = 0
@@ -26,15 +26,15 @@
 #         else:
 #             row += 1
 
-# def printGrid(grid):
-#     for r in grid:
-#         for c in r:
-#             if c == None:
-#                 c = "None"
-#             print(c.rjust(8), end=" ")
-#         print()
+def printGrid(grid):
+    for r in grid:
+        for c in r:
+            if c == None:
+                c = "None"
+            print(c.rjust(8), end=" ")
+        print()
 
-# printGrid(colorGrid)
+printGrid(colorGrid)
 
 
 # l = [1, 1, 1, 1, 2, 3, 4, 5, 3, 3]
