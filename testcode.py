@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import random
 
 rows = 10
@@ -53,18 +52,18 @@ printGrid(colorGrid)
 check_gaps(colorGrid)
 print("---------------------")
 printGrid(colorGrid)
-=======
-# import random
 
-# rows = 10
-# cols = 10
+import random
 
-# colorGrid = []
-# colors = ['red', 'blue', 'green', 'yellow'] 
+rows = 10
+cols = 10
 
-# for _ in range(rows):
-#     color = random.choices(colors, k=cols)
-#     colorGrid.append(color)
+colorGrid = []
+colors = ['red', 'blue', 'green', 'yellow'] 
+
+for _ in range(rows):
+    color = random.choices(colors, k=cols)
+    colorGrid.append(color)
 
 # for row in range(rows):
 #     col = 0
@@ -82,15 +81,15 @@ printGrid(colorGrid)
 #         else:
 #             row += 1
 
-# def printGrid(grid):
-#     for r in grid:
-#         for c in r:
-#             if c == None:
-#                 c = "None"
-#             print(c.rjust(8), end=" ")
-#         print()
+def printGrid(grid):
+    for r in grid:
+        for c in r:
+            if c == None:
+                c = "None"
+            print(c.rjust(8), end=" ")
+        print()
 
-# printGrid(colorGrid)
+printGrid(colorGrid)
 
 
 # l = [1, 1, 1, 1, 2, 3, 4, 5, 3, 3]
@@ -113,4 +112,3 @@ for loc in cordi:
     print(loc[1])
 
 
->>>>>>> 5e827fec52b9371e14808f366ea2b16ac5d15297
