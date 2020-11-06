@@ -33,23 +33,14 @@ def appStarted(app):
     app.selected = []                       #keeps account of selected cells
     app.score = 0
 
-   
-#     textX = 5
-#     textY = 5
-# def showScore(x,y):
-#     score = font.render("Score :" + str(app.score))
-#     pygame.display.flip(score, (x,y))
+score = 0
 
-    
 def initFillGrid(app):
-    
+    global score
     colors = ['red', 'blue', 'green', 'yellow']             #list of desired colors
     for _ in range(app.rows):
         color = random.choices(colors, k=app.cols)          
         app.colors.append(color)
-
- 
-   
     for col in range(app.cols):
         row = 0
         while(row<app.rows-2):
@@ -62,7 +53,9 @@ def initFillGrid(app):
             if (eliminateMatch5(app, row, col) or eliminateMatch3(app, row, col)):
                 drop_cell(app, row, col)
                 new_cell(app)
-
+    while(checkMatches(app)!=0):
+        pass
+    score = 0 
 
 def getCellBounds(app, row, col):                           #takes row and col, then returns top-left.. 
     gridWidth  = app.width - 2*app.margin                   #..and bottom-right coordinates of a cell
@@ -81,27 +74,33 @@ def getCell(app, x, y):                                     #finds cell for give
         col = int((x - app.margin) / cellWidth)
         return (row, col)
 
+
 def mousePressed(app, event):                               #this will happen on a mouse click
     (row, col) = getCell(app, event.x, event.y)                 #get row and col for location of click
     app.selected.append((row, col))
     if len(app.selected)==2:                                    #there are 2 pairs of row and col in app.selected               
         swapCells(app)                                          #call swapCells
         app.selected = []                                       #after swapping set app.selected as empty
-        checkMatches(app)
-        check_gaps(app)
-        new_cell(app)
-
+    while(checkMatches(app)!=0):
+        pass
+    app.score = score
 
 def swapCells(app):
+    global score
     r1 = app.selected[0][0]
     c1 = app.selected[0][1]
     r2 = app.selected[1][0]
     c2 = app.selected[1][1]
     if (abs(r1-r2)==1 and c1==c2) or (r1==r2 and abs(c1-c2)==1):        #if cells are adjacent, swap their colors
         (app.colors[r1][c1], app.colors[r2][c2]) = (app.colors[r2][c2], app.colors[r1][c1])
-
-        if not validMatch5(app, r1, c1, r2, c2) and not validMatch3(app, r1, c1, r2, c2):       #if move is not valid, restore..
+        match3 = validMatch3(app, r1, c1, r2, c2)
+        match5 = validMatch5(app, r1, c1, r2, c2)
+        if not match3 and not match5:       #if move is not valid, restore..
             (app.colors[r1][c1], app.colors[r2][c2]) = (app.colors[r2][c2], app.colors[r1][c1]) #..original colors
+        if match5:
+            score += 2
+        elif match3:
+            score += 1
 
 
 def validMatch3(app, row1, col1, row2, col2):                           #check if swap is valid match 3 move
@@ -178,11 +177,21 @@ def new_cell(app):
                 app.colors[row][col] = random.choice(color)
 
 def checkMatches(app):
+    global score
+    c = 0
     for row in range(app.rows):
         for col in range(app.cols):
-            eliminateMatch5(app, row ,col)
-            eliminateMatch3(app, row, col)
-            drop_cell(app, row, col)
+            if eliminateMatch5(app, row, col): 
+                check_gaps(app)
+                new_cell(app)
+                c += 1
+                score += 2
+            elif eliminateMatch3(app, row, col):
+                check_gaps(app)
+                new_cell(app)
+                c += 1
+                score += 2
+    return c
 
 def redrawAll(app, canvas):                                 #this will be seen on output screen
     
@@ -197,5 +206,6 @@ def redrawAll(app, canvas):                                 #this will be seen o
                 border = 'black'
                 thick = 1
             canvas.create_rectangle(x0, y0, x1, y1, fill=app.colors[row][col], outline=border, width= thick)
+    print(score)
 
 runApp(width=400, height=400)
