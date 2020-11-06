@@ -94,7 +94,7 @@ def new_cell(app, canvas):
     #for col in range(len(canvas[0])):
     for row in range(app.rows):
         if canvas[0][row] is None and random.random()<New_prob:
-            canvas[0][row]=random.randint(1,8)
+            canvas[0][row]=random.randint(1,9)
 
 def mousePressed(app, event):
     (row, col) = getCell(app, event.x, event.y)

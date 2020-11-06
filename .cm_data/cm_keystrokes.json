@@ -24828,5 +24828,21 @@
             "keyStrokeInfo": "\r\n",
             "position": "109,1"
         }
+    ],
+    "draft2.py": [
+        {
+            "operation": "DELETE",
+            "lines": 0,
+            "keyStrokeTimeStamp": "Fri Nov 06 2020 09:20:54",
+            "keyStrokeInfo": "",
+            "position": "97,45"
+        },
+        {
+            "operation": "TYPED",
+            "lines": 0,
+            "keyStrokeTimeStamp": "Fri Nov 06 2020 09:20:55",
+            "keyStrokeInfo": "9",
+            "position": "97,45"
+        }
     ]
 }
