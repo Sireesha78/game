@@ -1,5 +1,7 @@
 from cmu_112_graphics import *
 import random
+import time
+import sys
 
 def appStarted(app):
     app.rows = 10                           #number of rows
@@ -14,6 +16,18 @@ def initFillGrid(app):
     for _ in range(app.rows):
         color = random.choices(colors, k=app.cols)          
         app.colors.append(color)
+        stop = 60
+        second = 0
+ 
+    while stop > second:
+        if second < 9:
+            second = second + 1
+            time.sleep(1)
+            sys.stdout.write('\r> ' + '0' + str(second))
+        else:
+            second += 1
+            time.sleep(1)
+            sys.stdout.write('\r' + '> ' + str(second))
 
 def getCellBounds(app, row, col):                           #takes row and col, then returns top-left.. 
     gridWidth  = app.width - 2*app.margin                   #..and bottom-right coordinates of a cell
