@@ -34,4 +34,21 @@ def printGrid(grid):
             print(c.rjust(8), end=" ")
         print()
 
+def drop_cell(grid, row,col):
+    for r in range(row,0,-1):
+        # for col in row:
+        # if app.colors[row][r] == app.colors[row-1][r]:
+        #         app.colors[0][r]=None
+        (grid[r][col], grid[r-1][col])=(grid[r-1][col],grid[r][col])
+
+
+def check_gaps(grid):
+    for row in range(len(grid)):
+        for col in range(len(grid[0])):
+            if grid[row][col] == None:
+                drop_cell(grid, row,col)
+
+printGrid(colorGrid)
+check_gaps(colorGrid)
+print("---------------------")
 printGrid(colorGrid)
