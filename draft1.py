@@ -93,8 +93,7 @@ def eliminateMatch5(app, row, col):
     if row>1 and row<app.rows-2:
         coordinates = [(row-2, col),(row-1,col), (row, col), (row+1, col),(row+2, col)]
         if eliminateCells(app, coordinates):
-            return True
-    
+            return True  
 
 def eliminateCells(app, coordinates):                               #sets cells to none if matched
     c = 0
