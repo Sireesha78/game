@@ -1,28 +1,5 @@
 from cmu_112_graphics import *
 import random
-# import pygame
-import time
-import sys
-# import pygame, sys
-# from pygame.locals import *
-
-# clock = pygame.time.Clock()
-# time = 0  #In Seconds
-
-#     #GameLoop
-
-# while True:
-
-#     milli = clock.tick()  #clock.tick() returns how many milliseconds passed since the last time it was called
-
-
-#         #So it tells you how long the while loop took
-
-#     seconds = milli/1000.
-
-#     time += seconds
-
-#     print (round(time)) #So you can see that this works
 
 def appStarted(app):
     app.rows = 10                           #number of rows
@@ -74,7 +51,6 @@ def getCell(app, x, y):                                     #finds cell for give
         col = int((x - app.margin) / cellWidth)
         return (row, col)
 
-
 def mousePressed(app, event):                               #this will happen on a mouse click
     (row, col) = getCell(app, event.x, event.y)                 #get row and col for location of click
     app.selected.append((row, col))
@@ -101,7 +77,6 @@ def swapCells(app):
             score += 2
         elif match3:
             score += 1
-
 
 def validMatch3(app, row1, col1, row2, col2):                           #check if swap is valid match 3 move
     return eliminateMatch3(app, row1, col1) or eliminateMatch3(app, row2, col2)

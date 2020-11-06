@@ -21,6 +21,30 @@ from tkinter import messagebox
 #         time.sleep(1)
 #         #sys.stdout.write('\r' + '> ' + str(second)
     
+# import pygame
+import time
+import sys
+# import pygame, sys
+# from pygame.locals import *
+
+# clock = pygame.time.Clock()
+# time = 0  #In Seconds
+
+#     #GameLoop
+
+# while True:
+
+#     milli = clock.tick()  #clock.tick() returns how many milliseconds passed since the last time it was called
+
+
+#         #So it tells you how long the while loop took
+
+#     seconds = milli/1000.
+
+#     time += seconds
+
+#     print (round(time)) #So you can see that this works
+
 
 
 def appStarted(app):
