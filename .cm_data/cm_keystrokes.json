@@ -24858,5 +24858,28 @@
             "keyStrokeInfo": "            canvas[0][row]=random.randint(1,9)\r\n",
             "position": "97,1"
         }
+    ],
+    "draft3.py": [
+        {
+            "operation": "TYPED",
+            "lines": 0,
+            "keyStrokeTimeStamp": "Fri Nov 06 2020 16:40:24",
+            "keyStrokeInfo": "a",
+            "position": "4,16"
+        },
+        {
+            "operation": "TYPED",
+            "lines": 0,
+            "keyStrokeTimeStamp": "Fri Nov 06 2020 16:40:24",
+            "keyStrokeInfo": "p",
+            "position": "4,17"
+        },
+        {
+            "operation": "TYPED",
+            "lines": 0,
+            "keyStrokeTimeStamp": "Fri Nov 06 2020 16:40:24",
+            "keyStrokeInfo": "p",
+            "position": "4,18"
+        }
     ]
 }
