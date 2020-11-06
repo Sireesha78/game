@@ -18,18 +18,6 @@ def initFillGrid(app):
     for _ in range(app.rows):
         color = random.choices(colors, k=app.cols)          
         app.colors.append(color)
-    for col in range(app.cols):
-        row = 0
-        while(row<app.rows-2):
-            if app.colors[row][col] == app.colors[row+1][col] == app.colors[row+2][col]:
-                app.colors[row][col] = random.choice(colors)
-            else:
-                row += 1
-    for row in range(app.rows-1, -1, -1):
-        for col in range(app.cols):
-            if (eliminateMatch5(app, row, col) or eliminateMatch3(app, row, col)):
-                drop_cell(app, row, col)
-                new_cell(app)
     while(checkMatches(app)!=0):
         pass
     score = 0 
