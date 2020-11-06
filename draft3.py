@@ -1,5 +1,28 @@
 from cmu_112_graphics import *
 import random
+# import pygame
+import time
+import sys
+# import pygame, sys
+# from pygame.locals import *
+
+# clock = pygame.time.Clock()
+# time = 0  #In Seconds
+
+#     #GameLoop
+
+# while True:
+
+#     milli = clock.tick()  #clock.tick() returns how many milliseconds passed since the last time it was called
+
+
+#         #So it tells you how long the while loop took
+
+#     seconds = milli/1000.
+
+#     time += seconds
+
+#     print (round(time)) #So you can see that this works
 
 def appStarted(app):
     app.rows = 10                           #number of rows
@@ -8,12 +31,35 @@ def appStarted(app):
     app.colors = []                         #will contain colors of cells
     initFillGrid(app)                       #initial random coloring function
     app.selected = []                       #keeps account of selected cells
+    app.score = 0
 
+   
+#     textX = 5
+#     textY = 5
+# def showScore(x,y):
+#     score = font.render("Score :" + str(app.score))
+#     pygame.display.flip(score, (x,y))
+
+    
 def initFillGrid(app):
+    
     colors = ['red', 'blue', 'green', 'yellow']             #list of desired colors
     for _ in range(app.rows):
         color = random.choices(colors, k=app.cols)          
         app.colors.append(color)
+ 
+    stop = 100
+    second = 0
+ 
+    while stop > second:
+        if second < 9:
+            second = second + 1
+            time.sleep(1)
+            sys.stdout.write('\r> ' + '0' + str(second))
+        else:
+            second += 1
+            time.sleep(1)
+            sys.stdout.write('\r' + '> ' + str(second))
 
 def getCellBounds(app, row, col):                           #takes row and col, then returns top-left 
     gridWidth  = app.width - 2*app.margin                   #and bottom-right coordinates of a cell
@@ -50,9 +96,12 @@ def swapCells(app):
         (app.colors[r1][c1], app.colors[r2][c2]) = (app.colors[r2][c2], app.colors[r1][c1])
         if not validMatch3(app, r1, c1, r2, c2):
             (app.colors[r1][c1], app.colors[r2][c2]) = (app.colors[r2][c2], app.colors[r1][c1])
+
+
     
 def validMatch3(app, row1, col1, row2, col2):
     if col1 == col2:
+        app.score += 1
         return eliminateColMatch3(app, row1, col1)
     if row1 == row2:
         return eliminateRowMatch3(app, row1, col1)
@@ -111,6 +160,8 @@ def new_cell(app):
                 app.colors[row][col] = random.choice(color)
 
 def redrawAll(app, canvas):                                 #this will be seen on output screen
+    
+    print(app.score)
     for row in range(app.rows):
         for col in range(app.cols):
             (x0, y0, x1, y1) = getCellBounds(app, row, col)
