@@ -15,8 +15,8 @@ def initFillGrid(app):
         color = random.choices(colors, k=app.cols)          
         app.colors.append(color)
 
-def getCellBounds(app, row, col):                           #takes row and col, then returns top-left 
-    gridWidth  = app.width - 2*app.margin                   #and bottom-right coordinates of a cell
+def getCellBounds(app, row, col):                           #takes row and col, then returns top-left.. 
+    gridWidth  = app.width - 2*app.margin                   #..and bottom-right coordinates of a cell
     gridHeight = app.height - 2*app.margin
     x0 = app.margin + gridWidth * col / app.cols
     x1 = app.margin + gridWidth * (col+1) / app.cols
@@ -46,16 +46,16 @@ def swapCells(app):
     c2 = app.selected[1][1]
     if (abs(r1-r2)==1 and c1==c2) or (r1==r2 and abs(c1-c2)==1):        #if cells are adjacent, swap their colors
         (app.colors[r1][c1], app.colors[r2][c2]) = (app.colors[r2][c2], app.colors[r1][c1])
-        if not validMatch5(app, r1, c1, r2, c2) and not validMatch3(app, r1, c1, r2, c2):
-            (app.colors[r1][c1], app.colors[r2][c2]) = (app.colors[r2][c2], app.colors[r1][c1])
+        if not validMatch5(app, r1, c1, r2, c2) and not validMatch3(app, r1, c1, r2, c2):       #if move is not valid, restore..
+            (app.colors[r1][c1], app.colors[r2][c2]) = (app.colors[r2][c2], app.colors[r1][c1]) #..original colors
 
-def validMatch5(app, row1, col1, row2, col2):
-    pass
-
-def validMatch3(app, row1, col1, row2, col2):
+def validMatch3(app, row1, col1, row2, col2):                           #check if swap is valid match 3 move
     return eliminateMatch3(app, row1, col1) or eliminateMatch3(app, row2, col2)
 
-def eliminateMatch3(app, row, col):
+def validMatch5(app, row1, col1, row2, col2):                           #check if swap is valid match 5 move
+    return eliminateMatch5(app, row1, col1) or eliminateMatch5(app, row2, col2)    
+
+def eliminateMatch3(app, row, col):                                     #finds a possible match 3
     if col>0 and col<app.cols-1:
         coordinates = [(row,col-1), (row, col), (row, col+1)]
         if eliminateCells(app, coordinates):
@@ -82,7 +82,18 @@ def eliminateMatch3(app, row, col):
             return True
     return False
 
-def eliminateCells(app, coordinates):
+def eliminateMatch5(app, row, col):
+    if col>1 and col<app.cols-2:
+        coordinates = [(row, col-2),(row,col-1), (row, col), (row, col+1),(row, col+2)]
+        if eliminateCells(app, coordinates):
+            return True
+    if row>1 and row<app.rows-2:
+        coordinates = [(row-2, col),(row-1,col), (row, col), (row+1, col),(row+2, col)]
+        if eliminateCells(app, coordinates):
+            return True
+    
+
+def eliminateCells(app, coordinates):                               #sets cells to none if matched
     c = 0
     row = coordinates[0][0]
     col = coordinates[0][1]
